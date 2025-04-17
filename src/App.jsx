@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import './App.css';
+import backgroundImage from './assets/gostei.jpg'; // Importe a imagem aqui
 
 function App() {
   const [nome, setNome] = useState("");
@@ -43,47 +44,57 @@ function App() {
   };
 
   return (
-    <div className="container">
-      <h1>Solicitação ao DSEI</h1>
-      <form onSubmit={handleSubmit}>
-        <label>Nome do Responsável:</label>
-        <input type="text" value={nome} onChange={(e) => setNome(e.target.value)} required />
+    <div
+      style={{
+        backgroundImage: `url(${backgroundImage})`, // Aplica a imagem de fundo
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        minHeight: '100vh', // Para cobrir a tela toda
+      }}
+    >
+      <div className="container">
+        <h1>Solicitação ao DSEI</h1>
+        <form onSubmit={handleSubmit}>
+          <label>Nome do Responsável:</label>
+          <input type="text" value={nome} onChange={(e) => setNome(e.target.value)} required />
 
-        <label>Aldeia:</label>
-        <input type="text" value={aldeia} onChange={(e) => setAldeia(e.target.value)} required />
+          <label>Aldeia:</label>
+          <input type="text" value={aldeia} onChange={(e) => setAldeia(e.target.value)} required />
 
-        <label>Categoria:</label>
-        <select value={categoria} onChange={(e) => setCategoria(e.target.value)}>
-          <option>Emergência Médica</option>
-          <option>Transporte</option>
-          <option>Visita Técnica</option>
-          <option>Outro</option>
-        </select>
+          <label>Categoria:</label>
+          <select value={categoria} onChange={(e) => setCategoria(e.target.value)}>
+            <option>Emergência Médica</option>
+            <option>Transporte</option>
+            <option>Visita Técnica</option>
+            <option>Outro</option>
+          </select>
 
-        <label>Descrição da Solicitação:</label>
-        <textarea
-          value={descricao}
-          onChange={(e) => setDescricao(e.target.value)}
-          placeholder="Descreva o problema aqui"
-          rows="5"
-          required
-        ></textarea>
+          <label>Descrição da Solicitação:</label>
+          <textarea
+            value={descricao}
+            onChange={(e) => setDescricao(e.target.value)}
+            placeholder="Descreva o problema aqui"
+            rows="5"
+            required
+          ></textarea>
 
-        <div className="botoes">
-          <button type="button" onClick={iniciarVoz}>🎤 Falar</button>
-          <button type="submit">Enviar Solicitação</button>
-        </div>
-      </form>
+          <div className="botoes">
+            <button type="button" onClick={iniciarVoz}>🎤 Falar</button>
+            <button type="submit">Enviar Solicitação</button>
+          </div>
+        </form>
 
-      {resposta && (
-        <div className="resposta">
-          <h2>Resumo da Solicitação:</h2>
-          <p><strong>Responsável:</strong> {resposta.nome}</p>
-          <p><strong>Aldeia:</strong> {resposta.aldeia}</p>
-          <p><strong>Categoria:</strong> {resposta.categoria}</p>
-          <p><strong>Descrição:</strong> {resposta.descricao}</p>
-        </div>
-      )}
+        {resposta && (
+          <div className="resposta">
+            <h2>Resumo da Solicitação:</h2>
+            <p><strong>Responsável:</strong> {resposta.nome}</p>
+            <p><strong>Aldeia:</strong> {resposta.aldeia}</p>
+            <p><strong>Categoria:</strong> {resposta.categoria}</p>
+            <p><strong>Descrição:</strong> {resposta.descricao}</p>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
