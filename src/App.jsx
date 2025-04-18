@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
-import backgroundImage from './assets/gostei.jpg'; // Importe a imagem aqui
+import backgroundImage from './assets/gostei.png'; // Importe a imagem aqui
 
 function App() {
   const [nome, setNome] = useState("");
