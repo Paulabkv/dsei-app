@@ -61,8 +61,6 @@ Depois, acesse a aplicação em:
 
 ## 🔧 Melhorias Futuras
 
-- Integração com banco de dados para salvar solicitações;
-- Criação de autenticação de usuário;
 - Implementação de categorização automática de chamados;
 - Dashboard para acompanhamento das solicitações pelo DSEI;
 - Geração automática de relatórios em PDF;
