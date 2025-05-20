@@ -63,7 +63,7 @@ Telas da aplicação:
 
 Resultados de teste de registro no banco de dados:
 
-<img width="882" alt="Captura de Tela 2025-05-20 às 00 10 16" src="https://github.com/user-attachments/assets/81390f5c-8ed7-4148-809a-058a2d3cbb40" />
+![image](https://github.com/user-attachments/assets/d87705ae-ede4-4627-90a4-c8265b83421b)
 ![image](https://github.com/user-attachments/assets/2ea448fb-61cb-4c2a-a7fb-c6135f977529)
 
 
