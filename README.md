@@ -56,7 +56,7 @@ Depois, acesse a aplicação em:
 ## 📷 Capturas de Tela
 
 ![image](https://github.com/user-attachments/assets/31259904-d5b3-48f5-9e05-3fde974b6683)
-![image](https://github.com/user-attachments/assets/73adac9a-fcdf-4e0e-a7da-b0d9c2c873c1;
+![image](https://github.com/user-attachments/assets/73adac9a-fcdf-4e0e-a7da-b0d9c2c873c1)
 ![image](https://github.com/user-attachments/assets/cd661fae-f537-4444-8539-04516a71d6b5)
 ![Captura de Tela 2025-05-20 às 00 10 51](https://github.com/user-attachments/assets/fe00a9b8-e7a1-486f-90bd-59ffa588d940)
 
