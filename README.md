@@ -73,7 +73,6 @@ Resultados de teste de registro no banco de dados:
 
 - Implementação de categorização automática de chamados;
 - Dashboard para acompanhamento das solicitações pelo DSEI;
-- Geração automática de relatórios em PDF;
 
 ## 📄 Licença
 
