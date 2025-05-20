@@ -34,14 +34,45 @@ function App() {
     recognition.start();
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setResposta({ nome, aldeia, categoria, descricao });
-    setNome("");
-    setAldeia("");
-    setCategoria("Emergência Médica");
-    setDescricao("");
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  const token = localStorage.getItem("token");
+
+  const chamado = {
+    responsavel: nome,
+    aldeia,
+    categoria,
+    descricao
   };
+
+  try {
+    const response = await fetch("http://localhost:3001/chamados", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`
+      },
+      body: JSON.stringify(chamado)
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      alert("Solicitação registrada com sucesso!");
+      setResposta(data); // mostra o resumo abaixo do formulário
+      setNome("");
+      setAldeia("");
+      setCategoria("Emergência Médica");
+      setDescricao("");
+    } else {
+      alert(data.erro || "Erro ao registrar solicitação.");
+    }
+  } catch (error) {
+    console.error("Erro ao enviar solicitação:", error);
+    alert("Erro de conexão com o servidor.");
+  }
+};
 
   return (
     <div
