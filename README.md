@@ -55,10 +55,16 @@ Depois, acesse a aplicação em:
 
 ## 📷 Capturas de Tela
 
+Telas da aplicação:
 ![image](https://github.com/user-attachments/assets/31259904-d5b3-48f5-9e05-3fde974b6683)
 ![image](https://github.com/user-attachments/assets/73adac9a-fcdf-4e0e-a7da-b0d9c2c873c1)
 ![image](https://github.com/user-attachments/assets/cd661fae-f537-4444-8539-04516a71d6b5)
 ![Captura de Tela 2025-05-20 às 00 10 51](https://github.com/user-attachments/assets/fe00a9b8-e7a1-486f-90bd-59ffa588d940)
+
+Resultados de teste de registro no banco de dados:
+
+<img width="882" alt="Captura de Tela 2025-05-20 às 00 10 16" src="https://github.com/user-attachments/assets/81390f5c-8ed7-4148-809a-058a2d3cbb40" />
+![image](https://github.com/user-attachments/assets/2ea448fb-61cb-4c2a-a7fb-c6135f977529)
 
 
 
