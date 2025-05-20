@@ -9,20 +9,29 @@ export default function Register() {
   const [unidade, setUnidade] = useState('');
   const navigate = useNavigate();
 
-  const handleRegister = () => {
-    const novoUsuario = { nome, email, senha, cargo, unidade };
-    const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+  const handleRegister = async () => {
+  try {
+    const response = await fetch("http://localhost:3001/auth/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ email, senha })
+    });
 
-    if (usuarios.find(u => u.email === email)) {
-      alert('Usuário já cadastrado');
-      return;
+    const data = await response.json();
+
+    if (response.ok) {
+      alert("Usuário registrado com sucesso!");
+      navigate("/login"); // Redireciona para a tela de login
+    } else {
+      alert(data.erro || "Erro ao registrar usuário.");
     }
-
-    usuarios.push(novoUsuario);
-    localStorage.setItem('usuarios', JSON.stringify(usuarios));
-    alert('Cadastro realizado com sucesso');
-    navigate('/');
-  };
+  } catch (error) {
+    console.error("Erro no registro:", error);
+    alert("Erro ao tentar registrar.");
+  }
+};
 
   return (
     <div>

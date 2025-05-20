@@ -6,17 +6,29 @@ export default function Login() {
   const [senha, setSenha] = useState('');
   const navigate = useNavigate();
 
-  const handleLogin = () => {
-    const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
-    const user = usuarios.find(u => u.email === email && u.senha === senha);
+const handleLogin = async () => {
+  try {
+    const response = await fetch("http://localhost:3001/auth/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ email, senha })
+    });
 
-    if (user) {
-      localStorage.setItem('usuarioLogado', JSON.stringify(user));
+    const data = await response.json();
+
+    if (response.ok && data.token) {
+      localStorage.setItem("token", data.token);
       navigate('/home');
     } else {
-      alert('Usuário ou senha inválidos');
+      alert(data.erro || 'Usuário ou senha inválidos');
     }
-  };
+  } catch (error) {
+    console.error("Erro no login:", error);
+    alert("Erro ao tentar fazer login.");
+  }
+};
 
   return (
     <div>
